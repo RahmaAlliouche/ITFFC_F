@@ -1,0 +1,212 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Caveat:wght@400;700&display=swap');
+
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+    overflow: hidden;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background: linear-gradient(45deg, #6b1664, #9b2587);
+    color: white;
+    width: 250px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Caveat', cursive;
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Menu Items */
+.menu-items {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-items li {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    gap: 12px;
+}
+
+.menu-items li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.menu-items li a:hover {
+    color: #68d5dd;
+}
+
+.menu-items li .icon {
+    font-size: 24px; /* Increased icon size */
+}
+
+.menu-items .active a {
+    font-weight: bold;
+    color: #1abc9c;
+}
+
+/* Help Section */
+.help-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.help-section a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: opacity 0.3s;
+}
+
+.help-section a:hover {
+    opacity: 0.8;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    background: radial-gradient(circle, #ecf0f1 0%, #e1f5f8 100%);
+    padding: 30px;
+    overflow-y: auto;
+}
+
+/* Settings Page Specific Styles */
+#main-content h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.settings-options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.setting-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode .sidebar {
+    background: linear-gradient(45deg, #2c2c2c, #3b3b3b);
+}
+
+.dark-mode .setting-item {
+    background: #333;
+    color: #ffffff;
+}
+
+.dark-mode button {
+    background: #444;
+    color: #ffffff;
+}
+
+/* Form Styles */
+#text-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#input-text {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #bdc3c7;
+    border-radius: 10px;
+    resize: vertical;
+    min-height: 150px;
+    background: linear-gradient(135deg, #fefefe, #f0f0f0);
+}
+
+/* Button Styles */
+button {
+    padding: 12px;
+    font-size: 18px;
+    background: linear-gradient(90deg, #e593b5, #cc3675);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #cc3675, #9b2587);
+    transform: scale(1.1);
+}
+
+.small-button {
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    font-size: 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.small-button:hover {
+    background-color: #16a085;
+    transform: scale(1.1);
+}
+
+/* Notifications Alert */
+.notification-alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #1abc9c;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    animation: fadeInOut 3s forwards;
+}
+
+/* Animation for Notification */
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}

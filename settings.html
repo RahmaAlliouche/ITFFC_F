@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - AI Text Detector</title>
+
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="settings.css">
+
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar Menu -->
+    <div class="sidebar">
+        <div class="menu-header">
+            <i class="fas fa-bars menu-icon"></i>
+        </div>
+        <ul class="menu-items">
+            <li><i class="fas fa-home icon"></i><a href="home.html">Home</a></li>
+            <li><i class="fas fa-info-circle icon"></i><a href="about.html">About</a></li>
+            <li><i class="fas fa-envelope icon"></i><a href="contact.html">Contact</a></li>
+            <li class="active"><i class="fas fa-cog icon"></i><a href="settings.html">Settings</a></li>
+        </ul>
+        <div class="help-section">
+            <i class="fas fa-question-circle icon"></i><a href="help.html">Help</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="main-content">
+        <h1>Settings</h1>
+        <div class="settings-options">
+            <div class="setting-item">
+                <i class="fas fa-moon"></i>
+                <span>Dark Mode</span>
+                <button class="small-button" id="dark-mode-toggle">Enable</button>
+            </div>
+
+            <div class="setting-item">
+                <i class="fas fa-bell"></i>
+                <span>Notifications</span>
+                <button class="small-button" id="notification-toggle">Turn On</button>
+            </div>
+
+            <div class="setting-item">
+                <i class="fas fa-language"></i>
+                <span>Language</span>
+                <button class="small-button" id="language-change">Change</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const mainContent = document.getElementById('main-content');
+        let darkModeEnabled = false;
+
+        darkModeToggle.addEventListener('click', () => {
+            darkModeEnabled = !darkModeEnabled;
+            document.body.classList.toggle('dark-mode', darkModeEnabled);
+            darkModeToggle.textContent = darkModeEnabled ? 'Disable' : 'Enable';
+        });
+
+        // Notifications Toggle
+const notificationToggle = document.getElementById('notification-toggle');
+let notificationsEnabled = false;
+
+notificationToggle.addEventListener('click', () => {
+    notificationsEnabled = !notificationsEnabled;
+    showNotification(notificationsEnabled ? 'Notifications Enabled!' : 'Notifications Disabled!');
+    notificationToggle.textContent = notificationsEnabled ? 'Turn Off' : 'Turn On';
+});
+
+// Function to Show Notification
+function showNotification(message) {
+    const alert = document.createElement('div');
+    alert.classList.add('notification-alert');
+    alert.textContent = message;
+    document.body.appendChild(alert);
+
+    // Remove alert after animation completes
+    setTimeout(() => alert.remove(), 3000);
+}
+
+        // Language Change
+        const languageChangeButton = document.getElementById('language-change');
+
+        languageChangeButton.addEventListener('click', () => {
+            const newLang = prompt('Enter language code (e.g., en, fr, tr):');
+            if (newLang) {
+                document.documentElement.lang = newLang;
+                alert(`Language changed to: ${newLang}`);
+            }
+        });
+    </script>
+</body>
+</html>

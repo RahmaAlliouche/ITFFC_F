@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Text Detector</title>
+    <link rel="stylesheet" href="home.css"> <!-- Link to CSS -->
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="menu-header">
+            <i class="menu-icon">&#9776;</i> 
+        </div>
+        <ul class="menu-items">
+            <li>
+                <i class="icon fas fa-home"></i> 
+                <a href="home.html">Home</a> 
+            </li>
+            <li>
+                <i class="icon fas fa-info-circle"></i> 
+                <a href="about.html">About</a>
+            </li>
+            <li class="active">
+                <i class="icon fas fa-envelope"></i> 
+                <a href="contact.html">Contact</a>
+            </li>
+            <li>
+                <i class="icon fas fa-cog"></i>
+                <a href="settings.html">Settings</a>
+            </li>
+        </ul>
+
+        <div class="help-section">
+            <i class="icon fas fa-robot"></i> 
+            <a href="help.html">Help</a>
+        </div>        
+    </div>
+
+    <div class="main-content">
+        <!-- Statistics Section -->
+        <div class="stats-section">
+            <div class="cards">
+                <div class="card">
+                    <h3>Total Texts Checked</h3>
+                    <p id="total-checked">0</p>
+                </div>
+                <div class="card">
+                    <h3>AI-Generated Texts</h3>
+                    <p id="ai-count">0</p>
+                </div>
+                <div class="card">
+                    <h3>Human-Written Texts</h3>
+                    <p id="human-count">0</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Text Detector Section -->
+        <div class="ai-detector">
+            <h1>AI Text Detector</h1>
+            <form id="text-form">
+                <label for="input-text">Enter Text :</label>
+                <textarea id="input-text" onkeypress="pressedEnter(e)" name="input-text" rows="5" placeholder="Enter the text you want to check" required></textarea>
+                <button type="submit">Detect</button>
+            </form>
+            <p id="result"></p>
+            <button id="reset-stats">Reset Statistics</button>
+        </div>
+    </div>
+
+    <script src="home.js"></script> <!-- Link to JavaScript -->
+</body>
+</html>
